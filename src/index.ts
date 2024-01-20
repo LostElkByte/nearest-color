@@ -17,17 +17,17 @@ interface RGB {
   a?: number;
 }
 
-// Interface for the result of finding the closest color
+// Interface for the result of finding the nearest color
 // 用于查找最接近的颜色返回结果的接口
-interface ClosestColorResult {
+interface NearestColorResult {
   key: string;
   [key: string | number | symbol]: any;
   distance: number;
 }
 
-// Class definition for finding the closest color
+// Class definition for finding the nearest color
 // 查找最接近的颜色的类
-class ClosestColor {
+class NearestColor {
   // Array to store the color palette
   // 使用数组来存储调色板
   colorPalette: ColorEntry[];
@@ -55,12 +55,12 @@ class ClosestColor {
   }
 
   /**
-   * Find the closest color
+   * Find the nearest color
    * 寻找最接近的颜色
    * @param {string | RGB} color - Color to match (supports hex, rgb strings, or RGB objects) 要匹配的颜色（支持 hex、rgb 字符串或 RGB 对象）
-   * @returns {ClosestColorResult} - The object closest to the color, containing color key-value pairs and distance information, as well as any other properties 最接近颜色的对象，包含颜色键值对和距离信息以及任意其它的属性
+   * @returns {NearestColorResult} - The object nearest to the color, containing color key-value pairs and distance information, as well as any other properties 最接近颜色的对象，包含颜色键值对和距离信息以及任意其它的属性
    */
-  find(color: string | RGB): ClosestColorResult {
+  find(color: string | RGB): NearestColorResult {
     // If the color is not valid, throw an error
     // 如果颜色不符合规则，抛出错误
     if (!tinycolor(color).isValid()) {
@@ -75,9 +75,9 @@ class ClosestColor {
     // 初始化最小距离平方为无穷大
     let minDistanceSq = Infinity;
 
-    // Variable to store the closest color object
+    // Variable to store the nearest color object
     // 存储最接近颜色对象的变量
-    let closestColor;
+    let nearestColor;
 
     // Iterate through the color palette
     // 遍历颜色调色板
@@ -103,56 +103,56 @@ class ClosestColor {
         Math.pow(targetRGB.g - g, 2) +
         Math.pow(targetRGB.b - b, 2);
 
-      // If the current distance is 0, update the minimum distance and closest color, then break out of the loop
+      // If the current distance is 0, update the minimum distance and nearest color, then break out of the loop
       // 如果当前距离为0，更新最小距离和最接近颜色并跳出循环
       if (currentDistanceSq === 0) {
         minDistanceSq = currentDistanceSq;
-        closestColor = colorEntry;
+        nearestColor = colorEntry;
         break;
       }
 
-      // If the current distance is smaller, update the minimum distance and closest color
+      // If the current distance is smaller, update the minimum distance and nearest color
       // 如果当前距离更小，更新最小距离和最接近颜色
       if (currentDistanceSq < minDistanceSq) {
         minDistanceSq = currentDistanceSq;
-        closestColor = colorEntry;
+        nearestColor = colorEntry;
       }
     }
 
     // Return the result
     // 返回结果
-    if (closestColor) {
+    if (nearestColor) {
       return {
-        ...closestColor,
+        ...nearestColor,
         distance: Math.sqrt(minDistanceSq),
       };
     } else {
-      // If no closest color is found, return a default value or throw an error
+      // If no nearest color is found, return a default value or throw an error
       // 如果没有找到最接近颜色，返回一个默认值或者抛出错误
-      throw new Error(`No closest color found for: ${color}`);
+      throw new Error(`No nearest color found for: ${color}`);
     }
   }
 
   /**
-   * Create a ClosestColor instance from an existing color palette
-   * 从现有颜色调色板创建 ClosestColor 实例
+   * Create a NearestColor instance from an existing color palette
+   * 从现有颜色调色板创建 NearestColor 实例
    * @param {Array<ColorEntry>} availableColors - Array containing key-value pairs of colors 包含颜色键值对的数组
-   * @returns {FindClosestColor} - New ClosestColor instance 新的 ClosestColor 实例
+   * @returns {FindNearestColor} - New NearestColor instance 新的 NearestColor 实例
    */
-  static from(availableColors: ColorEntry[]): ClosestColor {
-    return new ClosestColor(availableColors);
+  static from(availableColors: ColorEntry[]): NearestColor {
+    return new NearestColor(availableColors);
   }
 
   /**
-   * Add additional colors to the existing palette and create a new ClosestColor instance
-   * 添加额外的颜色到现有调色板，并创建新的 ClosestColor 实例
+   * Add additional colors to the existing palette and create a new NearestColor instance
+   * 添加额外的颜色到现有调色板，并创建新的 NearestColor 实例
    * @param {Array<ColorEntry>} alternateColors - Array containing additional color key-value pairs 包含额外颜色键值对的数组
-   * @returns {ColorMatcher} - New ClosestColor instance 新的 ClosestColor 实例
+   * @returns {ColorMatcher} - New NearestColor instance 新的 NearestColor 实例
    */
-  concat(alternateColors: ColorEntry[]): ClosestColor {
+  concat(alternateColors: ColorEntry[]): NearestColor {
     const extendedColors = this.colorPalette.concat(alternateColors);
-    return new ClosestColor(extendedColors);
+    return new NearestColor(extendedColors);
   }
 }
 
-export default ClosestColor;
+export default NearestColor;

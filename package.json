@@ -1,7 +1,7 @@
 {
-  "name": "closest-color",
+  "name": "@lostelk/nearest-color",
   "version": "1.0.0-alpha",
-  "description": "Discover the closest color from a predefined collection of colors.",
+  "description": "Discover the nearest color from a predefined collection of colors.",
   "main": "dist/index-cjs.js",
   "module": "dist/index-es.js",
   "browser": "dist/index.umd.js",
@@ -26,6 +26,7 @@
   "keywords": [
     "color",
     "colors",
+    "nearest-color",
     "closest-color",
     "color-matching",
     "nearest-color-finder",

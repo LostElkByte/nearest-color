@@ -13,6 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "closest-color": "file:.."
+    "nearest-color": "file:.."
   }
 }
