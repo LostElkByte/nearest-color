@@ -8,7 +8,7 @@ export default defineConfig(
     output: [
       {
         format: 'umd',
-        name: 'closestColor',
+        name: 'closestColorLibrary',
         file: 'dist/index.js',
         globals: {
           tinycolor2: 'tinycolor',
