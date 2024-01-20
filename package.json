@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
     "@types/chai": "^4.3.11",
     "@types/jest": "^29.5.11",
     "@types/tinycolor2": "^1.4.6",

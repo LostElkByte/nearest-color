@@ -1,6 +1,7 @@
 import { defineConfig } from 'rollup';
 import typescript from 'rollup-plugin-typescript2';
 import dts from 'rollup-plugin-dts';
+import terser from '@rollup/plugin-terser';
 
 export default defineConfig(
   {
@@ -23,7 +24,7 @@ export default defineConfig(
         file: 'dist/index.esm.js',
       },
     ],
-    plugins: [typescript()],
+    plugins: [typescript(),terser()],
     external: ['tinycolor2'],
   },
   {
