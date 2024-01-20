@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <title>组件库测试</title>
+    <script src="../node_modules/closest-color/node_modules/tinycolor2/dist/tinycolor-min.js"></script>
     <script src="../node_modules/closest-color/dist/index.js"></script>
   </head>
   <body></body>
   <script>
-    closestColor.closestColor();
+   const result = new ClosestColor();
+   console.log(result.find('#fff'));
   </script>
 </html>
