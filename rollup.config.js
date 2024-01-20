@@ -3,7 +3,7 @@ import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import terser from '@rollup/plugin-terser';
 
-export default defineConfig(
+export default defineConfig([
   {
     input: 'src/index.ts',
     output: [
@@ -24,11 +24,11 @@ export default defineConfig(
         file: 'dist/index.esm.js',
       },
     ],
-    plugins: [typescript(),terser()],
+    plugins: [typescript(), terser()],
     external: ['tinycolor2'],
   },
   {
-    //打包声明文件
+    // 打包声明文件
     input: 'src/index.ts',
     output: {
       file: 'dist/index.d.ts',
@@ -36,4 +36,4 @@ export default defineConfig(
     },
     plugins: [dts()],
   },
-);
+]);
