@@ -1,7 +1,9 @@
-import NearestColor from '../node_modules/nearest-color/dist/index.esm.js';
+import NearestColor from '@lostelk/nearest-color';
+// const NearestColor = require('@lostelk/nearest-color');
 
 console.time('nearestColor');
 const findNearestColor = new NearestColor();
-const result = findNearestColor.find('#0ff');
+const result = findNearestColor.find('#fff');
 console.log(result);
+
 console.timeEnd('nearestColor');
