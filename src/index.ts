@@ -33,10 +33,10 @@ class NearestColor {
   colorPalette: ColorEntry[];
 
   constructor(colorPalette: ColorEntry[] = DEFAULT_COLORS) {
-    // Check if the color palette is empty
-    // 检查颜色调色板是否为空
-    if (colorPalette.length === 0) {
-      throw new Error('Color palette must not be an empty array');
+    // Check if the color palette is empty array
+    // 检查颜色调色板是否为空数组
+    if (!Array.isArray(colorPalette) || colorPalette.length === 0) {
+      throw new Error('Color palette must be a non-empty array');
     }
 
     this.colorPalette = colorPalette;
