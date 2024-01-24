@@ -1,6 +1,6 @@
 {
   "name": "@lostelk/nearest-color",
-  "version": "1.0.13-alpha",
+  "version": "1.0.14-alpha",
   "description": "Discover the nearest color from a predefined collection of colors.",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
