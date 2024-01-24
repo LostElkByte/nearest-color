@@ -5,7 +5,7 @@ import { DEFAULT_COLORS } from './utils/defaultColors';
 // 用于颜色条目的接口
 interface ColorEntry {
   key: string;
-  [key: string | number | symbol]: any;
+  [key: string]: any;
 }
 
 // Interface for RGB color representation
@@ -21,7 +21,7 @@ interface RGB {
 // 用于查找最接近的颜色返回结果的接口
 interface NearestColorResult {
   key: string;
-  [key: string | number | symbol]: any;
+  [key: string]: any;
   distance: number;
 }
 
