@@ -5,6 +5,18 @@ import terser from '@rollup/plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 
+const getRollupPluginsConfig = () => {
+  return [
+    typescript(),
+    terser({
+      ecma: 5,
+      module: true,
+      toplevel: true,
+      compress: { pure_getters: true },
+      format: { wrap_func_args: false },
+    }),
+  ];
+};
 export default defineConfig([
   {
     // UMD 输出配置
@@ -19,11 +31,11 @@ export default defineConfig([
       },
     },
     plugins: [
+      resolve(),
       commonjs({
         include: /node_modules/,
       }),
       typescript(),
-      resolve(),
       terser(),
     ],
   },
@@ -35,10 +47,7 @@ export default defineConfig([
       file: 'dist/index.cjs',
     },
     external: ['tinycolor2'],
-    plugins: [
-      typescript(),
-      terser(),
-    ],
+    plugins: getRollupPluginsConfig(),
   },
   {
     // ES Module (ESM) 输出配置
@@ -48,17 +57,14 @@ export default defineConfig([
       file: 'dist/index.mjs',
     },
     external: ['tinycolor2'],
-    plugins: [
-      typescript(),
-      terser(),
-    ],
+    plugins: getRollupPluginsConfig(),
   },
   {
     // Declaration 文件输出配置
     input: 'src/index.ts',
     output: [
       {
-        file: 'dist/index.d.mts',
+        file: 'dist/index.d.ts',
         format: 'es',
       },
       {
