@@ -3,7 +3,7 @@ console.time('nearestColor - ES6 module');
 import NearestColor from 'nearest-color';
 try {
   const findNearestColor = new NearestColor();
-  const result = findNearestColor.find('#fff');
+  const result = findNearestColor.find({ h: 0, s: 1, l: .5 });
   console.log(result);
 } catch (error) {
   console.log(error);
