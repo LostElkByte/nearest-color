@@ -1,10 +1,14 @@
 import tinycolor from 'tinycolor2';
 import { DEFAULT_COLORS } from './utils/defaultColors';
 
+// Define the type for color input, which can be either a string or objects representing RGB, HSL, or HSV.
+// 定义颜色输入的类型，可以是字符串，也可以是 RGB、HSL、HSV 对象
+type ColorFormat = string | RGB | HSL | HSV;
+
 // Interface for a color entry
 // 用于颜色条目的接口
 interface ColorEntry {
-  key: string;
+  key: ColorFormat;
   [key: string]: any;
 }
 
@@ -17,10 +21,28 @@ interface RGB {
   a?: number;
 }
 
+// Interface for HSL color representation
+// 用于HSL颜色的接口
+interface HSL {
+  h: number;
+  s: number;
+  l: number;
+  a?: number;
+}
+
+// Interface for HSV color representation
+// 用于HSV颜色的接口
+interface HSV {
+  h: number;
+  s: number;
+  v: number;
+  a?: number;
+}
+
 // Interface for the result of finding the nearest color
 // 用于查找最接近的颜色返回结果的接口
 interface NearestColorResult {
-  key: string;
+  key: ColorFormat;
   [key: string]: any;
   distance: number;
 }
@@ -44,9 +66,9 @@ class NearestColor {
 
   // Color palette cache
   // 调色板缓存
-  private colorPaletteMap: Map<string | RGB, RGB> = new Map();
+  private colorPaletteMap: Map<ColorFormat, RGB> = new Map();
 
-  private getColorPaletteMap(color: string | RGB): RGB {
+  private getColorPaletteMap(color: ColorFormat): RGB {
     // Check if there is a cache
     // 检查是否有缓存
     if (this.colorPaletteMap.has(color)) {
@@ -63,10 +85,10 @@ class NearestColor {
   /**
    * Find the nearest color
    * 寻找最接近的颜色
-   * @param {string | RGB} color - Color to match (supports hex, rgb strings, or RGB objects) 要匹配的颜色（支持 hex、rgb 字符串或 RGB 对象）
+   * @param {string | RGB | HSL | HSV} color - Color to match (supports strings、HEX、RGB、HSL、HSV) 要匹配的颜色（支持字符串、HEX、RGB、HSL、HSV）
    * @returns {NearestColorResult} - The object nearest to the color, containing color key-value pairs and distance information, as well as any other properties 最接近颜色的对象，包含颜色键值对和距离信息以及任意其它的属性
    */
-  find(color: string | RGB): NearestColorResult {
+  find(color: ColorFormat): NearestColorResult {
     // If the color is not valid, throw an error
     // 如果颜色不符合规则，抛出错误
     if (!tinycolor(color).isValid()) {
@@ -140,8 +162,8 @@ class NearestColor {
   }
 
   /**
-   * Create a NearestColor instance from an existing color palette
-   * 从现有颜色调色板创建 NearestColor 实例
+   * Create a NearestColor instance using a custom color palette
+   * 使用自定义颜色调色板创建 NearestColor 实例
    * @param {Array<ColorEntry>} availableColors - Array containing key-value pairs of colors 包含颜色键值对的数组
    * @returns {FindNearestColor} - New NearestColor instance 新的 NearestColor 实例
    */
