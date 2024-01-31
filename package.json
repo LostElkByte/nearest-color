@@ -1,6 +1,6 @@
 {
   "name": "@lostelk/nearest-color",
-  "version": "1.0.25-alpha",
+  "version": "1.0.0-beta.0",
   "description": "Discover the nearest color from a predefined collection of colors.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -51,8 +51,8 @@
     "color-comparison",
     "color-matching-utility"
   ],
-  "homepage": "",
-  "bugs": "",
+  "homepage": "https://github.com/LostElkByte/nearest-color",
+  "bugs": "https://github.com/LostElkByte/nearest-color/issues",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
