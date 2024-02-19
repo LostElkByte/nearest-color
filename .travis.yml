@@ -1,4 +1,11 @@
 language: node_js
 node_js:
-  - stable
-script: npm run test
+  - lts/*
+cache:
+  directories:
+    - node_modules
+install:
+  - npm config set progress false
+  - npm install
+script:
+  - npm run test
