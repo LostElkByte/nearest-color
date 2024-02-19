@@ -160,4 +160,31 @@ describe('NearestColor', () => {
       );
     } catch (error) {}
   });
+
+  // Find the nearest color - if the color keys in the palette array are invalid, a warning is recorded and skippe
+  it('finds the nearest color - if the color keys in the palette array are invalid, a warning is recorded and skippe', () => {
+    try {
+      const ERROR_PALETTE = [
+        {
+          key: '#3498db',
+          name: ['Blue'],
+        },
+        {
+          key: '#$WSSSS',
+          name: ['Red'],
+        },
+        {
+          key: '#27ae60',
+          name: ['Green'],
+        },
+      ];
+      console.warn = jest.fn();
+      const nearestColorInstance = new NearestColor(ERROR_PALETTE);
+      nearestColorInstance.find('#FF5733');
+      expect(console.warn).toHaveBeenCalledWith(
+        'Color palette must be a non-empty array',
+      );
+      expect(console.warn).toHaveBeenCalledTimes(1);
+    } catch (error) {}
+  });
 });

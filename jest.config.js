@@ -6,4 +6,5 @@ export default {
     node: { global: true },
     browser: { globals: { window: {} } },
   },
+  collectCoverage: true,
 };
