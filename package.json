@@ -40,16 +40,8 @@
     "colors",
     "nearest-color",
     "closest-color",
-    "color-matching",
-    "nearest-color-finder",
-    "predefined-color-lookup",
-    "color-proximity",
-    "palette-matching",
-    "color-selection",
-    "color-similarity",
-    "closest-color-algorithm",
-    "color-comparison",
-    "color-matching-utility"
+    "最接近的颜色",
+    "最邻近的颜色"
   ],
   "homepage": "https://github.com/LostElkByte/nearest-color",
   "bugs": "https://github.com/LostElkByte/nearest-color/issues",
