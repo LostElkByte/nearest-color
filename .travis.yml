@@ -1,7 +1,13 @@
-language: minimal
+language: node_js
+node_js:
+  - '18' # 指定 Node.js 版本，也可以指定其他版本
+
 cache:
   directories:
-    - node_modules
+    - node_modules # 缓存 node_modules 目录，加快构建速度
+
+install:
+  - npm install # 安装依赖
+
 script:
-  - npm install
-  - npm run test
+  - npm test # 运行测试命令
