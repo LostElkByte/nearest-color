@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '18' # 指定 Node.js 版本，也可以指定其他版本
+  - '16' # 指定 Node.js 版本，也可以指定其他版本
 
 cache:
   directories:
