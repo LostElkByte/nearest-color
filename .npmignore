@@ -1,0 +1,8 @@
+*
+!dist/
+!tests/
+!CHANGELOG.md
+!LICENSE
+!README.ZH.md
+!README.md
+!package.json
