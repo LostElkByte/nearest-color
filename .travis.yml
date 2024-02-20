@@ -1,10 +1,7 @@
-language: node_js
-node_js:
-  - "18.17.0"
+language: minimal
 cache:
   directories:
     - node_modules
-install:
-  - npm install
 script:
+  - npm install
   - npm run test
