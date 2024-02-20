@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "16.20.1"
+  - "18.20.1"
 cache:
   directories:
     - node_modules
