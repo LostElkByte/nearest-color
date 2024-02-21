@@ -5,6 +5,7 @@
 [![npm](https://img.shields.io/npm/dt/@lostelk/nearest-color)](https://www.npmjs.com/package/@lostelk/nearest-color)
 ![npm package minimized gzipped size (select exports)](https://img.shields.io/bundlejs/size/@lostelk/nearest-color)
 [![NPM](https://img.shields.io/npm/l/@lostelk/nearest-color)](http://opensource.org/licenses/MIT)
+[![Build Status](https://app.travis-ci.com/LostElkByte/nearest-color.svg?branch=main)](https://app.travis-ci.com/LostElkByte/nearest-color)
 
 [English](README.md) · [简体中文](README.ZH.md)
 

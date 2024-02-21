@@ -27,7 +27,9 @@
   "scripts": {
     "test": "jest",
     "build": "rollup -c rollup.config.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "coverage": "jest --coverage",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "author": {
     "name": "LostElk",
@@ -55,6 +57,7 @@
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",
     "chai": "^5.0.0",
+    "coveralls": "^3.1.1",
     "eslint": "^8.56.0",
     "jest": "^29.7.0",
     "rollup": "^4.6.1",
