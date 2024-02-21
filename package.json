@@ -29,7 +29,7 @@
     "build": "rollup -c rollup.config.js",
     "lint": "eslint .",
     "coverage": "jest --coverage",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "author": {
     "name": "LostElk",
