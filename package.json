@@ -1,6 +1,6 @@
 {
   "name": "@lostelk/nearest-color",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Discover the nearest color from a predefined collection of colors.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -31,6 +31,14 @@
     "coverage": "jest --coverage",
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
+  "files": [
+    "dist",
+    "tests",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.ZH.md",
+    "README.md"
+  ],
   "author": {
     "name": "LostElk",
     "email": "lostelk.email@gmail.com"
