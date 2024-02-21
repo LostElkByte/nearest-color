@@ -10,4 +10,4 @@ install:
   - npm install --no-warnings # 安装依赖
 
 script:
-  - npm test # 运行测试命令
+  - npm coveralls # 运行测试命令
