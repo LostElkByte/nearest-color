@@ -6,7 +6,7 @@
 ![npm package minimized gzipped size (select exports)](https://img.shields.io/bundlejs/size/@lostelk/nearest-color)
 [![NPM](https://img.shields.io/npm/l/@lostelk/nearest-color)](http://opensource.org/licenses/MIT)
 [![Build Status](https://app.travis-ci.com/LostElkByte/nearest-color.svg?branch=main)](https://app.travis-ci.com/LostElkByte/nearest-color)
-[![Coverage Status](https://coveralls.io/repos/github/nihaojob/popular-message/badge.svg?branch=main)](https://coveralls.io/github/nihaojob/popular-message?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/LostElkByte/nearest-color/badge.svg?branch=main)](https://coveralls.io/github/LostElkByte/nearest-color?branch=main)
 
 [English](README.md) · [简体中文](README.ZH.md)
 <!-- [English](https://www.npmjs.com/package/@lostelk/nearest-color#@lostelk/nearest-color) · [简体中文](https://github.com/LostElkByte/nearest-color/blob/main/README.ZH.md) -->
